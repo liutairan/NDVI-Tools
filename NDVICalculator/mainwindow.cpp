@@ -395,7 +395,7 @@ void SerialWorker::addExif(QFileInfo fileInfo, QString newFilePath)
 
     QProcess *process = new QProcess(this);
     process->setProcessChannelMode(QProcess::MergedChannels);
-    QString cmd = "/Users/liutairan/Anaconda/anaconda3/bin/python /Users/liutairan/Documents/QT/NDVICalculator/editexif.py " + srcFilePath + " " + destFilePath;
+    QString cmd = "python editexif.py " + srcFilePath + " " + destFilePath;
     process->start(cmd, QIODevice::ReadWrite);
     // Wait for it to start
     if(!process->waitForStarted())
